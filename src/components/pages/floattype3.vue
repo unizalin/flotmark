@@ -7,7 +7,7 @@
             <a href="#" class="X"></a>
           </div>
           <div class="BOX_BG" :style="{borderColor:borderColor}">
-            <p class="BLACK"> <span class="text" :class="{isRed: text.isRed,isBold:text.isBold}" v-for="(item,index) in items" v-on:click="remove(index)" @click="item.isRed=!item.isRed"> {{item.label}}</span></p>
+            <p class="BLACK"> <span class="text" :class="{isRed: item.isRed,isBold:item.isBold}"  v-for="(item,idx) in items" v-on:click="remove(idx)" :key="idx"  :data="item" >{{item.text}}</span></p>
             <div class="e_BT">
               <ul class="ONE">
                 <li><a id="BT_COLOUR" class="BT_COLOUR" href="#">{{buttonText}}</a></li>
@@ -92,7 +92,10 @@ export default {
   data() {
     return {
       input: "",
-      items: [{ id: 1, label: "Learn VueJs", isRed: false }],
+      items: [
+        { text: "Learn VueJs", isRed: false, isBold: false },
+        { text: "Learn VueJs", isRed: true, isBold: false }
+      ],
       text: [
         {
           isRed: false,
@@ -105,7 +108,11 @@ export default {
   },
   methods: {
     add() {
-      this.items.push(this.input);
+      this.items.push({
+        text: this.input,
+        isRed: this.text.isRed,
+        isBold: this.text.isBold
+      });
       this.input = "";
     },
     remove(index) {
