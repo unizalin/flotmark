@@ -6,7 +6,7 @@
           <div class="BOX_TOP">
             <a class="X" href="#"></a>
           </div>
-          <div class="BOX_BG">
+          <div class="BOX_BG"  :style="{borderColor:borderColor}" >
             <ul class="content">
               <li class="spot">•服務升級！登入算紫微財 富命盤(價值$480元)</li>
               <li class="spot">•加碼贈送！張盛舒《愛情 有方》電子書(價值$480 元)</li>
@@ -14,7 +14,7 @@
               <li>• 300元算命金 </li>
               <li>• 總價值超過$12, 000元 </li>
             </ul>
-            <p class="yearprice">1年期 NT$3,600元</p>
+            <p class="yearprice">{{inftext}}</p>
             <div class="e_BT">
               <ul class="one">
                 <li><a id="BT_COLOUR"  class="BT_COLOUR_top" href="#">立即加入</a></li>
@@ -65,6 +65,22 @@
                     </div>
                   </div>
                 </div>
+                <div class="form-group mt-2">
+                    <label for="text">文字</label>
+                    <input type="text" class="form-control mt-2" id="text" placeholder="1年期NT$3,600N元" v-model.trim="inftext">
+                    <div class="form-check form-check-inline mt-2">
+                      <input class="form-check-input" type="checkbox" id="textcolor" v-model.trim="text.isBlack">
+                      <label class="form-check-label" for="textcolor">
+                        黑色
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline mt-2">
+                      <input class="form-check-input" type="checkbox" id="fontweight" v-model.trim="text.isNormal">
+                      <label class="form-check-label" for="fontweight">
+                        一般體
+                      </label>
+                    </div>
+                  </div>
                 <div class="form-row mt-2">
                   <label for="text">按鈕文字</label>
                   <input type="text" class="form-control mt-2" id="text" placeholder="立即加入" v-model.trim="buttonText">
@@ -119,6 +135,7 @@ export default {
           isBold: false
         }
       ],
+      inftext: "1年期NT$3,600N元",
       buttonText: "立即加入",
       borderColor: "#e6e6e6"
     };

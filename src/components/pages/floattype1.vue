@@ -57,7 +57,7 @@
                       <label for="border">邊框顏色</label>
                       <input type="text" class="form-control " id="border" placeholder="#e6e6e6" maxlength="7" v-model.trim="borderColor" :style="{background:borderColor}">
                     </div>
-                    <div class="form-row mt-2">
+                    <div class="form mt-2">
                       <label for="text">按鈕文字</label>
                       <input type="text" class="form-control " id="text" placeholder="立即加入" v-model.trim="buttonText">
                     </div>
