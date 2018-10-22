@@ -335,26 +335,6 @@ a.X::after {
   text-decoration: none;
 }
 #INPUT_BOX a.BT_COLOUR_bottom {
-  background: #9121d1;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #9121d1 0%, #d548f8 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(
-    top,
-    #9121d1 0%,
-    #d548f8 100%
-  ); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(
-    to bottom,
-    #9121d1 0%,
-    #d548f8 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9121d1', endColorstr='#d548f8',GradientType=0 ); /* IE6-9 */
-  border-radius: 5px;
-  border: 1px solid #9121d1;
-  box-shadow: inset 0px 0px 2px rgba(255, 255, 255, 1);
-}
-#INPUT_BOX a.BT_COLOUR:hover {
   background: #d548f8; /* Old browsers */
   background: -moz-linear-gradient(top, #d548f8 0%, #9121d1 100%);
   /* FF3.6-15 */
@@ -362,7 +342,30 @@ a.X::after {
   /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, #d548f8 0%, #9121d1 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d548f8', endColorstr='#9121d1',GradientType=0 ); /* IE6-9 */
+  border-radius: 5px;
+  border: 1px solid #9121d1;
+  box-shadow: inset 0px 0px 2px rgba(255, 255, 255, 1);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d548f8', endColorstr='#9121d1',GradientType=0 );
+  /* IE6-9 */
+  &:hover {
+    background: #9121d1; /* Old browsers */
+    background: -moz-linear-gradient(
+      top,
+      #9121d1 0%,
+      #d548f8 100%
+    ); /* FF3.6-15 */
+    background: -webkit-linear-gradient(
+      top,
+      #9121d1 0%,
+      #d548f8 100%
+    ); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(
+      to bottom,
+      #9121d1 0%,
+      #d548f8 100%
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9121d1', endColorstr='#d548f8',GradientType=0 ); /* IE6-9 */
+  }
 }
 // #INPUT_BOX .BOX_FOOT {
 // position: absolute;
@@ -372,7 +375,6 @@ a.X::after {
 // left: 0;
 // background-color: #e6e6e6; /* background: url(../images/input_box/in_foot.png) no-repeat; */
 // }
-// /
 .gradient-1 {
   background: #fb2121;
   background: linear-gradient(to bottom, #fb2121, #b21424);
