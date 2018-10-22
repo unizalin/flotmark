@@ -41,7 +41,7 @@
                 <h2>上方文字欄</h2>
                 <div class="form-row mt-2 mb-2">
                   <div class="col-7">
-                    <input type="text" class="form-control"  v-model.trim="input" >
+                    <input type="text" class="form-control" id="value" v-model.trim="input" >
                   </div>
                   <div class="col-2">
                     <button  class="btn btn-primary" v-on:click="add">+</button >
@@ -166,6 +166,10 @@ export default {
   },
   methods: {
     add() {
+      if (!this.input) {
+        alert("請填資料");
+        return;
+      }
       this.items.push({
         text: this.input,
         isRed: this.text.isRed,
@@ -194,7 +198,7 @@ export default {
 #INPUT_BOX {
   background-color: #eee;
   width: 220px;
-  height: 540px;
+  max-height: 540px;
   position: relative;
   /* position: fixed;
   right: 0.8%;

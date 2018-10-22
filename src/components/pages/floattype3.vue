@@ -32,13 +32,13 @@
                   </div>
                   <div class="col-3">
                     <div class="form-check form-check-inline ">
-                      <input class="form-check-input" type="checkbox" id="textcolor" v-model.trim="text.isRed">
+                      <input class="form-check-input" type="checkbox" id="textcolor" v-model="text.isRed">
                       <label class="form-check-label" for="textcolor">
                         紅色
                       </label>
                     </div>
                     <div class="form-check form-check-inline ">
-                      <input class="form-check-input" type="checkbox" id="fontweight" v-model.trim="text.isBold">
+                      <input class="form-check-input" type="checkbox" id="fontweight" v-model="text.isBold">
                       <label class="form-check-label" for="fontweight">
                         粗體
                       </label>
@@ -108,12 +108,18 @@ export default {
   },
   methods: {
     add() {
+      let textcolor = document.getElementById("textcolor");
+      if (!this.input) {
+        alert("請填資料");
+        return;
+      }
       this.items.push({
         text: this.input,
         isRed: this.text.isRed,
         isBold: this.text.isBold
       });
       this.input = "";
+      textcolor.removeAttr("checked");
     },
     remove(index) {
       this.items.splice(index, 1);
