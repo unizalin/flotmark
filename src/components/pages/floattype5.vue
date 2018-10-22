@@ -14,7 +14,7 @@
               <li>• 300元算命金 </li>
               <li>• 總價值超過$12, 000元 </li>
             </ul>
-            <p class="yearprice">{{inftext}}</p>
+            <p class="yearprice" :class="{isBlack: inf.isBlack,isNormal:inf.isNormal}" >{{inf.text}}</p>
             <div class="e_BT">
               <ul class="one">
                 <li><a id="BT_COLOUR"  class="BT_COLOUR_top" href="#">立即加入</a></li>
@@ -67,15 +67,15 @@
                 </div>
                 <div class="form-group mt-2">
                     <label for="text">文字</label>
-                    <input type="text" class="form-control mt-2" id="text" placeholder="1年期NT$3,600N元" v-model.trim="inftext">
+                    <input type="text" class="form-control mt-2" id="text" placeholder="1年期NT$3,600N元" v-model.trim="inf.text">
                     <div class="form-check form-check-inline mt-2">
-                      <input class="form-check-input" type="checkbox" id="textcolor" v-model.trim="text.isBlack">
+                      <input class="form-check-input" type="checkbox" id="textcolor" v-model="inf.isBlack">
                       <label class="form-check-label" for="textcolor">
                         黑色
                       </label>
                     </div>
                     <div class="form-check form-check-inline mt-2">
-                      <input class="form-check-input" type="checkbox" id="fontweight" v-model.trim="text.isNormal">
+                      <input class="form-check-input" type="checkbox" id="fontweight" v-model="inf.isNormal">
                       <label class="form-check-label" for="fontweight">
                         一般體
                       </label>
@@ -135,7 +135,13 @@ export default {
           isBold: false
         }
       ],
-      inftext: "1年期NT$3,600N元",
+      inf: [
+        {
+          text: "1年期NT$3,600N元",
+          isBlack: false,
+          isNormal: false
+        }
+      ],
       buttonText: "立即加入",
       borderColor: "#e6e6e6"
     };
@@ -230,6 +236,12 @@ a.X::after {
   font-size: 21px;
   color: #cc0000;
   font-weight: bold;
+}
+#INPUT_BOX .BOX_BG .yearprice.isBlack {
+  color: black;
+}
+#INPUT_BOX .BOX_BG .yearprice.isNormal {
+  font-weight: normal;
 }
 #INPUT_BOX .BOX_BG .e_BT {
   clear: both;

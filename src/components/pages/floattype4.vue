@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <div class="row mt-5 p-5">
+  <div>
+    <div class="row mt-5">
       <div class="col-3">
         <div id="INPUT_BOX">
           <div class="BOX_TOP">
