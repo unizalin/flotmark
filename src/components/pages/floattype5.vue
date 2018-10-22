@@ -8,11 +8,7 @@
           </div>
           <div class="BOX_BG"  :style="{borderColor:borderColor}" >
             <ul class="content">
-              <li class="spot">•服務升級！登入算紫微財 富命盤(價值$480元)</li>
-              <li class="spot">•加碼贈送！張盛舒《愛情 有方》電子書(價值$480 元)</li>
-              <li>• 批命格、十年大運、歲運 詳 批等熱門服務 </li>
-              <li>• 300元算命金 </li>
-              <li>• 總價值超過$12, 000元 </li>
+              <li  :class="{isRed: item.isRed,isBold:item.isBold}"  v-for="(item,idx) in items" v-on:click="remove(idx)" :key="idx"  :data="item" >{{item.text}}</li>
             </ul>
             <p class="yearprice" :class="{isBlack: inf.isBlack,isNormal:inf.isNormal}" >{{inf.text}}</p>
             <div class="e_BT">
@@ -128,7 +124,29 @@ export default {
   data() {
     return {
       input: "",
-      items: [{ id: 1, label: "Learn VueJs", isRed: false }],
+      items: [
+        {
+          text: "•服務升級！登入算紫微財 富命盤(價值$480元)",
+          isRed: true,
+          isBold: true
+        },
+        {
+          text: "•加碼贈送！張盛舒《愛情 有方》電子書(價值$480 元)",
+          isRed: true,
+          isBold: true
+        },
+        {
+          text: "• 批命格、十年大運、歲運 詳 批等熱門服務",
+          isRed: false,
+          isBold: false
+        },
+        { text: "• 300元算命金", isRed: false, isBold: false },
+        {
+          text: "• 300元算命金",
+          isRed: false,
+          isBold: false
+        }
+      ],
       text: [
         {
           isRed: false,
@@ -148,7 +166,11 @@ export default {
   },
   methods: {
     add() {
-      this.items.push(this.input);
+      this.items.push({
+        text: this.input,
+        isRed: this.text.isRed,
+        isBold: this.text.isBold
+      });
       this.input = "";
     },
     remove(index) {
@@ -222,6 +244,12 @@ a.X::after {
   padding: 0px 14px;
   margin: 4px 0px;
   font-size: 16px;
+}
+#INPUT_BOX .BOX_BG .content li.isRed {
+  color: #cc0000;
+}
+#INPUT_BOX .BOX_BG .content li.isBold {
+  font-weight: bold;
 }
 #INPUT_BOX .BOX_BG .content li:last-child {
   margin-bottom: 0px;
