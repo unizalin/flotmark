@@ -129,6 +129,10 @@ export default {
 };
 </script>
 <style scoped lang="scss">
+* {
+  font-family: Microsoft JhengHei, 新細明體, 細明體, Arial, Helvetica,
+    sans-serif;
+}
 #INPUT_BOX {
   width: 250px;
   height: 240px;

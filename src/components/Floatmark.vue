@@ -24,3 +24,10 @@ export default {
   }
 };
 </script>
+<style>
+body {
+  font-family: Microsoft JhengHei, 新細明體, 細明體, Arial, Helvetica,
+    sans-serif;
+}
+</style>
+>

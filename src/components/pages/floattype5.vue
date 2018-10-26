@@ -8,7 +8,7 @@
           </div>
           <div class="BOX_BG"  :style="{borderColor:borderColor}" >
             <ul class="content">
-              <li  :class="{isRed: item.isRed,isBold:item.isBold}"  v-for="(item,idx) in items" v-on:click="remove(idx)" :key="idx"  :data="item" >{{item.text}}</li>
+              <li  :class="{isRed: item.isRed,isBold:item.isBold}"  v-for="(item,idx) in items" v-on:click="remove(idx)" :key="idx" >{{item.text}}</li>
             </ul>
             <p class="yearprice" :class="{isBlack: inf.isBlack,isNormal:inf.isNormal}" >{{inf.text}}</p>
             <div class="e_BT">
@@ -21,7 +21,8 @@
                 <p>白金服務諮詢專線</p>
               </div>
               <div class="infotext">
-                <p>(02) 26980111#512 </p><small>服務時間：週一至週五09:00-18:00</small>
+                <p class="telphone">(02) 26980111#512 </p>
+                <small>服務時間：週一至週五09:00-18:00</small>
                 <div class="e_BT">
                   <ul class="one">
                     <li><a class="BT_COLOUR_bottom" href="#">我想瞭解本服務</a></li>
@@ -126,12 +127,12 @@ export default {
       input: "",
       items: [
         {
-          text: "•服務升級！登入算紫微財 富命盤(價值$480元)",
+          text: "• 服務升級！登入算紫微財 富命盤(價值$480元)",
           isRed: true,
           isBold: true
         },
         {
-          text: "•加碼贈送！張盛舒《愛情 有方》電子書(價值$480 元)",
+          text: "• 加碼贈送！張盛舒《愛情 有方》電子書(價值$480 元)",
           isRed: true,
           isBold: true
         },
@@ -171,7 +172,7 @@ export default {
         return;
       }
       this.items.push({
-        text: this.input,
+        text: "•  " + this.input,
         isRed: this.text.isRed,
         isBold: this.text.isBold
       });
@@ -200,6 +201,7 @@ export default {
   width: 220px;
   max-height: 540px;
   position: relative;
+  overflow: hidden;
   /* position: fixed;
   right: 0.8%;
   top: 15%; */
@@ -241,11 +243,13 @@ a.X::after {
   border-bottom: 7px solid #e7e7e7e7;
 }
 #INPUT_BOX .BOX_BG .content {
-  padding-top: 8px;
+  padding: 8px 14px;
+  padding-bottom: 0px;
+  max-height: 235px;
+  overflow: hidden;
 }
 #INPUT_BOX .BOX_BG .content li {
   line-height: 23px;
-  padding: 0px 14px;
   margin: 4px 0px;
   font-size: 16px;
 }
@@ -280,7 +284,6 @@ a.X::after {
   width: 100%;
   height: auto;
   overflow: hidden;
-  padding: 4px 0px;
 }
 #INPUT_BOX .BOX_BG .e_BT ul.one {
   height: auto;
@@ -289,17 +292,18 @@ a.X::after {
 }
 #INPUT_BOX .BOX_BG .e_BT ul.one li a {
   display: block;
-  width: 90%;
-  padding: 8px 0;
-  height: auto;
+  padding: 0;
+  width: 190px;
+  height: 46px;
   overflow: hidden;
   margin: 0 auto;
   text-decoration: none;
   text-align: center;
   font-weight: bold;
-  font-size: 1em;
-  line-height: 1.2em;
+  font-size: 20px;
+  line-height: 46px;
   color: #ffffff;
+  letter-spacing: 1px;
 }
 #INPUT_BOX a.BT_COLOUR_top {
   background: #fb2121; /* Old browsers */
@@ -343,25 +347,30 @@ a.X::after {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b21424', endColorstr='#fb2121',GradientType=0 ); /* IE6-9 */
 }
 #INPUT_BOX .BOX_BG .bottom {
-  width: 90%;
-  height: auto;
+  width: 190px;
+  height: 142px;
   margin: 0 auto;
-  padding: 8px 0px;
+  margin-top: 8px;
+  background-color: #ffffff;
 }
 #INPUT_BOX .BOX_BG .bottom .title {
-  padding: 8px;
+  height: 35px;
   font-size: 20px;
   text-align: center;
   background-color: #7e66de;
   color: #ffffff;
+  p {
+    line-height: 35px;
+    font-weight: bold;
+  }
 }
 #INPUT_BOX .BOX_BG .bottom .infotext {
   text-align: center;
   height: auto;
   background-color: #ffffff;
-  padding: 10px 0px;
+  padding: 8px 0px;
 }
-#INPUT_BOX .BOX_BG .bottom .infotext p {
+#INPUT_BOX .BOX_BG .bottom .infotext p.telphone {
   font-weight: bold;
   font-size: 19px;
 }
@@ -375,30 +384,28 @@ a.X::after {
   height: auto;
   overflow: hidden;
   margin: 0 auto;
-  padding-top: 5px;
-}
-#INPUT_BOX .BOX_BG .bottom .e_BT ul.one {
-  height: auto;
-  overflow: hidden;
-  margin: 0 auto;
+  margin-top: 8px;
 }
 #INPUT_BOX .BOX_BG .bottom .e_BT ul.one li a {
   display: block;
-  width: 90%;
-  padding: 8px 0;
-  height: auto;
+  width: 170px;
+  height: 40px;
   overflow: hidden;
   margin: 0 auto;
+  padding: 0;
   text-decoration: none;
-  margin: 0 auto;
-  font-size: 20px;
   text-align: center;
-  text-decoration: none;
+  font-size: 20px;
+  line-height: 40px;
+  color: #ffffff;
 }
 #INPUT_BOX a.BT_COLOUR_bottom {
   background: #d548f8; /* Old browsers */
-  background: -moz-linear-gradient(top, #d548f8 0%, #9121d1 100%);
-  /* FF3.6-15 */
+  background: -moz-linear-gradient(
+    top,
+    #d548f8 0%,
+    #9121d1 100%
+  ); /* FF3.6-15 */
   background: -webkit-linear-gradient(top, #d548f8 0%, #9121d1 100%);
   /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, #d548f8 0%, #9121d1 100%);
@@ -406,15 +413,11 @@ a.X::after {
   border-radius: 5px;
   border: 1px solid #9121d1;
   box-shadow: inset 0px 0px 2px rgba(255, 255, 255, 1);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d548f8', endColorstr='#9121d1',GradientType=0 );
-  /* IE6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d548f8', endColorstr='#9121d1',GradientType=0 ); /* IE6-9 */
   &:hover {
     background: #9121d1; /* Old browsers */
-    background: -moz-linear-gradient(
-      top,
-      #9121d1 0%,
-      #d548f8 100%
-    ); /* FF3.6-15 */
+    background: -moz-linear-gradient(top, #9121d1 0%, #d548f8 100%);
+    /* FF3.6-15 */
     background: -webkit-linear-gradient(
       top,
       #9121d1 0%,
