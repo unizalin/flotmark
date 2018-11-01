@@ -4,8 +4,8 @@
     <!-- <Alert></Alert> -->
     <div class="container-fluid">
       <div class="row">
-        <Sidebar></Sidebar>
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <!-- <Sidebar></Sidebar> -->
+        <main role="main" class="col-md-12 ml-sm-auto col-lg-12">
           <router-view></router-view>
         </main>
       </div>
@@ -24,10 +24,3 @@ export default {
   }
 };
 </script>
-<style>
-body {
-  font-family: Microsoft JhengHei, 新細明體, 細明體, Arial, Helvetica,
-    sans-serif;
-}
-</style>
->

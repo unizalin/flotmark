@@ -6,10 +6,14 @@ import VueAxios from 'vue-axios'
 import App from './App'
 import router from './router'
 import 'bootstrap';
+import currencyFilter from './filters/currency'
+import wenqu from '../static/js/wenqu'
 
+Vue.use(wenqu)
 Vue.use(VueAxios, axios)
 Vue.config.productionTip = false
-
+axios.defaults.withCredentials = true;
+Vue.filter('currency', currencyFilter)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

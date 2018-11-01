@@ -3,7 +3,10 @@
   height: 16px;
   vertical-align: text-bottom;
 }
-
+* {
+  font-family: Microsoft JhengHei, 新細明體, 細明體, Arial, Helvetica,
+    sans-serif;
+}
 /*
  * Sidebar
  */
@@ -36,7 +39,10 @@
 
 .sidebar .nav-link {
   font-weight: 500;
-  color: #007bff;
+  color: #333;
+  &:hover{
+    color: #007bff;
+  }
 }
 
 .sidebar .nav-link .feather {
@@ -44,13 +50,10 @@
   color: #999;
 }
 
-.sidebar .nav-link.active {
-  color: #007bff;
-}
 
 .sidebar .nav-link:hover .feather,
 .sidebar .nav-link.active .feather {
-  color: #007bff;
+  color: inherit;
 }
 
 .sidebar-heading {

@@ -11,7 +11,7 @@
       <ul class="nav flex-column mb-2">
         <li class="nav-item">
           <router-link to="/floattype1" class="nav-link">
-            <i class="fas fa-box-open"></i>計次產品
+            <i class="far fa-hand-point-up"></i>計次產品
           </router-link>
         </li>
         <li class="nav-item">
@@ -44,6 +44,21 @@
         </a>
       </h6>
       <ul class="nav flex-column mb-2">
+        <li class="nav-item">
+          <router-link to="/videopop" class="nav-link">
+            <i class="far fa-hand-point-up"></i>影片彈跳
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/inputpop" class="nav-link">
+            <i class="far fa-hand-point-up"></i>輸入頁彈跳
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/opinionpop" class="nav-link">
+            <i class="far fa-hand-point-up"></i>問題回覆彈跳
+          </router-link>
+        </li>
       </ul>
     </div>
   </nav>

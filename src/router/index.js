@@ -6,6 +6,9 @@ import Floattype2 from '@/components/pages/Floattype2';
 import Floattype3 from '@/components/pages/Floattype3';
 import Floattype4 from '@/components/pages/Floattype4';
 import Floattype5 from '@/components/pages/Floattype5';
+import Video from '@/components/pages/videopop'
+import Input from '@/components/pages/inputpop'
+import Opinion from '@/components/pages/opinion'
 
 
 Vue.use(Router)
@@ -41,6 +44,21 @@ export default new Router({
           path: '/floattype5',
           name: 'Floattype5',
           component: Floattype5
+        },
+        {
+          path: '/videopop',
+          name: 'Videopop',
+          component: Video
+        },
+        {
+          path: '/inputpop',
+          name: 'Inputpop',
+          component: Input
+        },
+        {
+          path: '/opinionpop',
+          name: 'Opinionpop',
+          component: Opinion
         },
 
       ]

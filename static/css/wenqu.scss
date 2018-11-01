@@ -1,0 +1,438 @@
+@charset "UTF-8";
+/* reset box-sizing */
+.wq-input,
+.wq-radio,
+.wq-radio + label,
+.wq-iconx,
+.wq-select {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+textarea.wq-area{
+  width: 100%;
+  height: 116px;
+  resize : none;
+  list-style: none;
+  padding-left: 6px;
+  font-size: 1em;
+  font-size: 20px;
+  line-height: 32px;
+  border: 1px solid #999;
+  background-color: #fff;
+  color: #333;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, "微軟正黑體", sans-serif;
+}
+/* input element for wenqu */
+input[type="text"].wq-input {
+  /* one for click, the input box will show 請輸入姓名或暱稱 */
+  /* content:"請輸入姓名或暱稱"; */
+  width: 100%;
+  height: 40px;
+  font-size: 1em;
+  line-height: 40px;
+  padding-left: 6px;
+  border: 1px solid #999;
+  background-color: #fff;
+  color: #333;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, "微軟正黑體", sans-serif;
+  /* line-height: 32px; IE-specific rules go here  */
+  /* height: 32px; IE-specific rules go here */
+}
+
+input[type="text"].wq-input:placeholder-shown {
+  background: transparent;
+}
+
+input[type="text"].wq-input::-webkit-input-placeholder {
+  background: transparent;
+}
+
+input[type="text"].wq-input:-moz-placeholder {
+  /* Firefox 18- */
+  background: transparent;
+}
+
+input[type="text"].wq-input::-moz-placeholder {
+  /* Firefox 19+ */
+  background: transparent;
+}
+
+input[type="text"].wq-input:-ms-input-placeholder {
+  background: transparent;
+}
+
+input[type="text"].wq-input.error {
+  color: #c00;
+  background-color: #fc6;
+  border: 1px solid #f90;
+}
+
+input[type="text"].wq-input.error:placeholder-shown {
+  font-size: 1em;
+  color: #c00;
+}
+
+input[type="text"].wq-input.error::-webkit-input-placeholder {
+  font-size: 1em;
+  color: #c00;
+}
+
+input[type="text"].wq-input.error:-moz-placeholder {
+  /* Firefox 18- */
+  font-size: 1em;
+  color: #c00;
+}
+
+input[type="text"].wq-input.error::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 1em;
+  color: #c00;
+}
+
+input[type="text"].wq-input.error:-ms-input-placeholder {
+  font-size: 1em;
+  color: #c00;
+}
+
+.wq-iconx {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  margin-left: -25px;
+  line-height: 25px;
+  display: inline-block;
+  opacity: 1;
+  top: 1px;
+  /* right:25px; */
+  right: 4px;
+  cursor: pointer;
+  /* font: bold 1em sans-serif; */
+  /* color: #38468F; */
+  text-indent: -9999px;
+  background-image: url("//imgs.click108.com.tw/wenqu/images/x_icon.png");
+  background-size: 25px 25px;
+}
+
+/* radio button element for wenqu */
+input[type="radio"].wq-radio {
+  display: none;
+}
+
+input[type="radio"].wq-radio + label {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding-top: 2px;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  background-color: #fff;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  color: #333;
+  line-height: 30px;
+  border: 1px solid #999;
+}
+
+input[type="radio"].wq-radio + label::before {
+  content: "\200B";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  transform: translateY(6px);
+  background-color: #fff;
+  box-shadow: inset 0 2px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 0 0 rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  border: 1px solid #aaa;
+  font-size: 35px;
+  text-align: center;
+  line-height: 20px;
+  font-family: Arial;
+}
+
+input[type="radio"].wq-radio:checked + label {
+  background-color: #deccf2;
+}
+
+input[type="radio"].wq-radio:checked + label::before {
+  content: "\2022";
+}
+
+/* drop-down element for wenqu */
+.wq-select {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
+  padding-left: 6px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  font-size: 1em;
+  font-family: Arial, Helvetica, "微軟正黑體", sans-serif;
+  background: url("//imgs.click108.com.tw/wenqu/images/select_icon.png") no-repeat right #fff;
+  background-size: 15px 15px;
+  background-position: right 10px center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.wq-select::-ms-expand {
+  display: none;
+}
+
+.wq-select option.leap-month {
+  color: #c00;
+}
+
+.wq-select.error {
+  color: #c00;
+  background-color: #fc6;
+  border: 1px solid #f90;
+}
+
+.wqPOP,
+.wqPOP div,
+.wqPOP p,
+.wqPOP ul,
+.wqPOP ul li,
+.wqPOP a {
+  list-style: none;
+  margin: 0;
+  /*add by cyl on 07/09/2017*/
+  padding: 0;
+  /*add by cyl on 07/09/2017*/
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-text-size-adjust: none;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.wq-pop.cover {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  /* background-color: rgb(0, 0, 0); */
+  /* opacity: 0.5; */
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+}
+
+.pop_t01 {
+  font-size: 1em;
+  line-height: 1.6em;
+  color: #333;
+  font-weight: bold;
+}
+
+.pop_t02 {
+  font-size: 1.2em;
+  line-height: 1.6em;
+  color: #333;
+  font-weight: bold;
+}
+
+.pop_t03 {
+  font-size: 1em;
+  line-height: 1.6em;
+  color: #6f25a7;
+  font-weight: bold;
+}
+
+.pop_t04 {
+  font-size: 1em;
+  line-height: 1.6em;
+  color: #333;
+}
+
+.pop_t05 {
+  font-size: 0.8em;
+  line-height: 1em;
+  color: #333;
+}
+
+.pop_t06 {
+  color: #c00;
+  font-weight: bold;
+}
+
+.wqPOP {
+  width: 370px;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #560891;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 8px #333;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.wqPOP .COM {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.wqPOP .RABOX {
+  width: 100%;
+  height: auto;
+  padding: 8px 5px 2px;
+}
+
+.wqPOP .TBAR {
+  width: 100%;
+  height: 35px;
+  background-color: #6f25a7;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.wqPOP .TBAR .XX {
+  width: 35px;
+  height: 35px;
+  float: right;
+}
+
+.wqPOP .TBAR .XX a {
+  display: block;
+  width: 35px;
+  height: 35px;
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+  background-position: center center;
+  background-image: url("//imgs.click108.com.tw/wenqu/images/pop_x_icon.png");
+}
+
+.wqPOP .BT01 {
+  width: 100%;
+  height: 45px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.wqPOP .BT01 li {
+  width: 100%;
+  float: left;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.wqPOP .BT01 li a {
+  display: block;
+  width: 100%;
+  height: 45px;
+  font-size: 1.2em;
+  color: #333;
+  text-align: center;
+  line-height: 45px;
+  background-color: #cfcfcf;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #969696;
+  box-shadow: inset 0 0 2px white;
+  -moz-box-shadow: inset 0 0 2px white;
+  -webkit-box-shadow: inset 0 0 2px white;
+}
+
+.wqPOP .BT02 {
+  width: 100%;
+  height: 45px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.wqPOP .BT02 ul li {
+  width: 49.3%;
+  float: left;
+}
+
+.wqPOP .BT02 ul li:first-child {
+  margin-right: 1px;
+}
+
+.wqPOP .BT02 ul li:last-child {
+  margin-left: 2px;
+}
+
+.wqPOP .BT02 ul a {
+  display: block;
+  width: 100%;
+  height: 45px;
+  font-size: 1.2em;
+  color: #333;
+  text-align: center;
+  line-height: 45px;
+  background-color: #cfcfcf;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #969696;
+  box-shadow: inset 0 0 2px white;
+  -moz-box-shadow: inset 0 0 2px white;
+  -webkit-box-shadow: inset 0 0 2px white;
+}
+
+.POP_LINE {
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.COM .TUL {
+  width: 100%;
+}
+
+.COM .TUL ul {
+  width: 100%;
+  padding-left: 25px;
+}
+
+.COM .TUL li {
+  width: 100%;
+  list-style-type: decimal;
+  font-size: 0.8em;
+  line-height: 1.6em;
+  color: #333;
+}
+
+.btn-alert a,
+.btn-yes a,
+.btn-no a {
+  cursor: pointer;
+}
+
+@media only screen and (max-device-width: 420px) {
+  .wqPOP {
+    width: 90vw;
+  }
+}
