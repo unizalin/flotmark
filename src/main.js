@@ -7,9 +7,11 @@ import App from './App'
 import router from './router'
 import 'bootstrap';
 import currencyFilter from './filters/currency'
-import wenqu from '../static/js/wenqu'
+// import wenqu from '../static/js/wenqu'
+// import form_check from '../static/js/form_check'
 
-Vue.use(wenqu)
+// Vue.use(wenqu)
+// Vue.use(form_check)
 Vue.use(VueAxios, axios)
 Vue.config.productionTip = false
 axios.defaults.withCredentials = true;
